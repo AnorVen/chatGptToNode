@@ -1,10 +1,10 @@
 'use client'
-import {Flag} from "@/components/types/types";
+import {Flag} from "@/types/types";
 import Image from 'next/image'
 import {useState} from "react";
 
 
-export default function FlagComponent({flag, setDeletedFlags}: {flag: Flag, setDeletedFlags: (iso_code2: string)=>void}) {
+export default function FlagComponent({flag, setDeletedFlagsAction}: {flag: Flag, setDeletedFlagsAction: (iso_code2: string)=>void}) {
     const [deleting, setDeleting] = useState(false)
     const [deleted, setDeleted] = useState(false)
     const handleDeleteFlag = () => {
@@ -12,7 +12,7 @@ export default function FlagComponent({flag, setDeletedFlags}: {flag: Flag, setD
         setTimeout(()=>{
             setDeleted(true)
             setDeleting(false)
-            setDeletedFlags(flag.iso_code2)
+            setDeletedFlagsAction(flag.iso_code2)
         }, 1000)
     }
 

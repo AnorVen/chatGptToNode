@@ -1,5 +1,5 @@
 'use client'
-import {Flag} from "@/components/types/types";
+import {Flag} from "@/types/types";
 import FlagComponent from "@/components/flag";
 import {useState} from "react";
 
@@ -13,7 +13,7 @@ export default function Flags({flags}: {flags: Flag[]}) {
 
     return (
         <>
-            {renderFlags.map((flag: Flag) => <FlagComponent flag={flag} key={flag.iso_code2} setDeletedFlags={handleDeleteFlags}/>)}
+            {renderFlags.map((flag: Flag) => <FlagComponent flag={flag} key={flag.iso_code2} setDeletedFlagsAction={handleDeleteFlags}/>)}
         </>
     );
 }
